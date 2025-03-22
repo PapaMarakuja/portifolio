@@ -246,14 +246,16 @@ const ProjectCard = ({ project, index }: {
           ))}
         </div>
 
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary hover:text-primary-light flex items-center"
-        >
-          View Project <i className="fas fa-arrow-right ml-2"></i>
-        </a>
+        {project.link && (
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary hover:text-primary-light flex items-center"
+          >
+            Visualizar Projeto <i className="fas fa-arrow-right ml-2"></i>
+          </a>
+        )}
       </div>
     </motion.div>
   );
@@ -273,25 +275,25 @@ const skills = [
 
 const featuredProjects = [
   {
-    title: "Título teste",
-    description: "Descrição teste, descrição teste, descrição teste, descrição teste",
+    title: "uNotes",
+    description: "Projeto de anotações desenvolvido com React, TypeScript, Tailwind CSS e DaisyUI. Desenvolvido durante a faculdade como projeto final.",
     image: "/images/project1.jpg",
     tags: ["React", "TypeScript", "Tailwind CSS"],
-    link: "#"
+    link: ""
   },
   {
-    title: "Título teste",
-    description: "Descrição teste, descrição teste, descrição teste, descrição teste",
+    title: "Mia Sotel - Portifolio",
+    description: "Portifólio desenvolvido com React e Tailwind CSS para apresentação pessoal.",
     image: "/images/project2.jpg",
-    tags: ["Vue.js", "Laravel", "PostgreSQL"],
-    link: "#"
+    tags: ["React.js", "TypeScript", "Tailwind CSS"],
+    link: "https://miasotel.com/"
   },
   {
-    title: "Título teste",
-    description: "Descrição teste, descrição teste, descrição teste, descrição teste",
+    title: "Booreal - Site de apresentação",
+    description: "Site desenvolvido com React, Tailwind CSS e Framer Motion para apresentação de uma empresa.",
     image: "/images/project3.jpg",
-    tags: ["Angular", "C#"],
-    link: "#"
+    tags: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+    link: "https://booreal-lab.web.app/"
   }
 ];
 

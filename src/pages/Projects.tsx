@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useScrollToTop } from '../utils/Utils';
 
 // Project data interface
 interface Project {
@@ -25,42 +24,33 @@ const Projects = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Título teste REACT",
-      description: "Descrição teste.",
+      title: "uNotes",
+      description: "Aplicativo web de anotações intuitivo e moderno desenvolvido como projeto final de graduação. Oferece funcionalidades de organização, categorização e compartilhamento de notas, com interface responsiva e amigável construída usando React, TypeScript e estilização moderna com Tailwind CSS e DaisyUI.",
       image: "/images/project1.jpg",
       tags: ["React", "TypeScript", "Tailwind CSS"],
-      link: "#",
-      github: "https://github.com/papamarakuja",
+      link: "",
+      github: "https://github.com/S3verino/uNotes_app",
       featured: true
     },
     {
       id: 2,
-      title: "Título teste ANGULAR",
-      description: "Descrição teste.",
-      image: "/images/project1.jpg",
-      tags: ["Angular", "C#", "Tailwind CSS"],
-      link: "#",
-      github: "https://github.com/papamarakuja",
-      featured: false
+      title: "Mia Sotel - Portifolio",
+      description: "Portfolio profissional elegante e interativo desenvolvido para showcase de trabalhos criativos. Construído com React e Tailwind CSS, apresenta uma experiência de usuário fluida com animações suaves, design responsivo e seções organizadas para destacar projetos e habilidades.",
+      image: "/images/project2.jpg",
+      tags: ["React.js", "TypeScript", "Tailwind CSS"],
+      link: "https://miasotel.com/",
+      github: "https://github.com/PapaMarakuja/mia-website",
+      featured: true
     },
     {
       id: 3,
-      title: "Título teste Vue.JS",
-      description: "Descrição teste.",
-      image: "/images/project1.jpg",
-      tags: ["React", "TypeScript", "Tailwind CSS"],
-      link: "#",
+      title: "Booreal - Site de apresentação",
+      description: "Landing page corporativa moderna e dinâmica desenvolvida para a Booreal. Implementada com React, Tailwind CSS e Framer Motion, oferece uma experiência imersiva com animações fluidas, design responsivo e seções interativas que apresentam os serviços e valores da empresa de forma envolvente.",
+      image: "/images/project3.jpg",
+      tags: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      link: "https://booreal-lab.web.app/",
+      github: "https://github.com/PapaMarakuja/booreal",
       featured: false
-    },
-    {
-      id: 4,
-      title: "Título teste REACT",
-      description: "Descrição teste.",
-      image: "/images/project1.jpg",
-      tags: ["React", "C#", "Tailwind CSS"],
-      link: "#",
-      github: "https://github.com/papamarakuja",
-      featured: true
     },
   ];
 
@@ -174,16 +164,18 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
         <div className="absolute inset-0 bg-dark-lighter/80 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-all duration-300">
           <div className="flex gap-4">
-            <motion.a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-dark"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              <i className="fas fa-external-link-alt"></i>
-            </motion.a>
+            {project.link && (
+              <motion.a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-dark"
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <i className="fas fa-external-link-alt"></i>
+              </motion.a>
+            )}
 
             {project.github && (
               <motion.a

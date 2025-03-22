@@ -8,10 +8,12 @@ import About from './pages/About';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
+import { initializeApp } from "firebase/app";
+import { firebaseConfig } from './firebase/config';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
-  
+
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
@@ -45,6 +47,9 @@ function App() {
       lenis.destroy();
     };
   }, []);
+
+  // Initialize Firebase
+  initializeApp(firebaseConfig);
 
   return (
     <Router>

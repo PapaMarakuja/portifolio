@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useScrollToTop } from '../utils/Utils';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -192,7 +191,7 @@ const Contact = () => {
               </div>
 
               <div className="mt-10">
-                <h3 className="text-xl font-bold mb-4">Connect With Me</h3>
+                <h3 className="text-xl font-bold mb-4">Conecte-se Comigo</h3>
                 <div className="flex space-x-4">
                   <SocialLink href="https://github.com/" icon="github" />
                   <SocialLink href="https://linkedin.com/in/" icon="linkedin" />
@@ -202,7 +201,7 @@ const Contact = () => {
               </div>
 
               <div className="mt-10 pt-6 border-t border-dark-light">
-                <h3 className="text-xl font-bold mb-4">Availability</h3>
+                <h3 className="text-xl font-bold mb-4">Disponibilidade</h3>
                 <p className="text-gray-400">
                   Atualmente disponível para trabalhos freelance e oportunidades em tempo integral.
                 </p>

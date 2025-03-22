@@ -1,6 +1,4 @@
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
-import { useScrollToTop } from '../utils/Utils';
 
 const About = () => {
   // Skills data
@@ -63,7 +61,7 @@ const About = () => {
             <div className="relative">
               <div className="absolute -inset-4 bg-primary/20 rounded-lg blur-lg"></div>
               <img
-                src="./src/images/profile.png"
+                src="./images/profile.png"
                 alt="Rafael Pereira"
                 className="w-full h-auto rounded-lg relative z-10"
               />
@@ -135,7 +133,7 @@ const About = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold mb-10 text-center">Education</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center">Formação</h2>
 
           <div className="relative border-l-2 border-primary/30 pl-8 ml-4">
             <EducationItem
@@ -195,7 +193,7 @@ const About = () => {
         </motion.div>
 
         {/* Certifications Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -224,7 +222,7 @@ const About = () => {
               icon="fab fa-react"
             />
           </div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );
@@ -299,35 +297,35 @@ const EducationItem = ({
   );
 };
 
-// Certification Card Component
-const CertificationCard = ({
-  title,
-  issuer,
-  date,
-  icon
-}: {
-  title: string;
-  issuer: string;
-  date: string;
-  icon: string
-}) => {
-  return (
-    <motion.div
-      whileHover={{ y: -10 }}
-      className="bg-dark-lighter p-6 rounded-lg border border-dark-light hover:border-primary/30 transition-all duration-300"
-    >
-      <div className="text-primary text-3xl mb-4">
-        <i className={icon}></i>
-      </div>
-      <h3 className="text-lg font-bold mb-2">{title}</h3>
-      <div className="flex items-center text-gray-400">
-        <span>{issuer}</span>
-        <span className="mx-2">•</span>
-        <span>{date}</span>
-      </div>
-    </motion.div>
-  );
-};
+// // Certification Card Component
+// const CertificationCard = ({
+//   title,
+//   issuer,
+//   date,
+//   icon
+// }: {
+//   title: string;
+//   issuer: string;
+//   date: string;
+//   icon: string
+// }) => {
+//   return (
+//     <motion.div
+//       whileHover={{ y: -10 }}
+//       className="bg-dark-lighter p-6 rounded-lg border border-dark-light hover:border-primary/30 transition-all duration-300"
+//     >
+//       <div className="text-primary text-3xl mb-4">
+//         <i className={icon}></i>
+//       </div>
+//       <h3 className="text-lg font-bold mb-2">{title}</h3>
+//       <div className="flex items-center text-gray-400">
+//         <span>{issuer}</span>
+//         <span className="mx-2">•</span>
+//         <span>{date}</span>
+//       </div>
+//     </motion.div>
+//   );
+// };
 
 // Remove the Skills component since we've integrated it into the About component
 

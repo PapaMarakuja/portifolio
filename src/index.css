@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #1DB954;
+  --dark: #121212;
+  --dark-lighter: #181818;
+  --dark-light: #282828;
+}
+
+body {
+  @apply bg-dark text-white font-sans;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.blur-motion {
+  transition: filter 0.3s ease-in-out;
+}
+
+.blur-motion:hover {
+  filter: blur(10px);
+}
+
+.blur-motion-active {
+  animation: blurAnimation 0.5s ease-in-out;
+}
+
+@keyframes blurAnimation {
+  0% {
+    filter: blur(0);
+  }
+
+  50% {
+    filter: blur(10px);
+  }
+
+  100% {
+    filter: blur(0);
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary), #4ade80);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Animation classes */
+.slide-in-left {
+  animation: slideInLeft 0.5s ease-out forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.5s ease-out forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--dark-light);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Project card hover effects */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(29, 185, 84, 0.1);
+}
+
+/* Button hover effects */
+.btn-primary {
+  @apply px-6 py-3 bg-primary text-dark font-medium rounded-md transition-all duration-300;
+}
+
+.btn-primary:hover {
+  @apply bg-primary-dark transform scale-105;
+  box-shadow: 0 0 15px rgba(29, 185, 84, 0.5);
+}
+
+.btn-outline {
+  @apply px-6 py-3 bg-transparent text-white font-medium rounded-md border border-primary transition-all duration-300;
+}
+
+.btn-outline:hover {
+  @apply bg-primary/10 transform scale-105;
+  box-shadow: 0 0 15px rgba(29, 185, 84, 0.3);
+}

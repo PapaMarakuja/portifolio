@@ -20,20 +20,6 @@ Este é meu portfólio pessoal desenvolvido com React, TypeScript, Vite e Tailwi
 - Tema escuro moderno
 - Integração com Firebase
 
-## Estrutura do Projeto
-rafael-pereira/
-├── public/
-│   └── images/
-├── src/
-│   ├── components/
-│   ├── pages/
-│   ├── firebase/
-│   ├── utils/
-│   ├── App.tsx
-│   └── main.tsx
-├── index.html
-└── package.json
-
 ## Instalação e Execução
 
 1. Clone o repositório

@@ -24,8 +24,8 @@ Este é meu portfólio pessoal desenvolvido com React, TypeScript, Vite e Tailwi
 
 1. Clone o repositório
 ```bash
-git clone https://github.com/seu-usuario/rafael-pereira.git
-cd rafael-pereira
+https://github.com/PapaMarakuja/portifolio.git
+cd portifolio
 ```
 
 2. Instale as dependências

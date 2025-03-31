@@ -187,7 +187,7 @@ const Contact = () => {
                   icon="fas fa-phone"
                   title="Phone"
                   value="+55 (47) 99237-3782"
-                  link="tel:+5511992373782"
+                  link="tel:+5547992373782"
                 />
 
                 <ContactInfoItem
@@ -200,7 +200,7 @@ const Contact = () => {
               <div className="mt-10">
                 <h3 className="text-xl font-bold mb-4">Conecte-se Comigo</h3>
                 <div className="flex space-x-4">
-                  {getSelectedSocialLinks(['github', 'linkedin', 'instagram']).map((social, index) => (
+                  {getSelectedSocialLinks(['github', 'linkedin', 'whatsapp', 'instagram']).map((social, index) => (
                     <SocialLink
                       key={index}
                       href={social.url}

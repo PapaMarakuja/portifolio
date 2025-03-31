@@ -21,41 +21,51 @@ const Projects = () => {
       id: 1,
       title: "uNotes",
       description: "Aplicativo web de anotações intuitivo e moderno desenvolvido como projeto final de graduação. Oferece funcionalidades de organização, categorização e compartilhamento de notas, com interface responsiva e amigável construída usando React, TypeScript e estilização moderna com Tailwind CSS e DaisyUI.",
-      image: "/images/project1.jpg",
+      image: "/images/uNotes-print.png",
       tags: ["React", "TypeScript"],
       link: "",
       github: "https://github.com/S3verino/uNotes_app",
-      featured: true
+      featured: false
     },
     {
       id: 2,
       title: "Mia Sotel - Portifolio",
       description: "Portfolio profissional elegante e interativo desenvolvido para showcase de trabalhos criativos. Construído com React e Tailwind CSS, apresenta uma experiência de usuário fluida com animações suaves, design responsivo e seções organizadas para destacar projetos e habilidades.",
-      image: "/images/project2.jpg",
+      image: "/images/miasotel-print.png",
       tags: ["React", "TypeScript"],
       link: "https://miasotel.com/",
       github: "https://github.com/PapaMarakuja/mia-website",
-      featured: true
+      featured: false
     },
     {
       id: 3,
       title: "Booreal - Site de apresentação",
       description: "Landing page corporativa moderna e dinâmica desenvolvida para a Booreal. Implementada com React, Tailwind CSS e Framer Motion, oferece uma experiência imersiva com animações fluidas, design responsivo e seções interativas que apresentam os serviços e valores da empresa de forma envolvente.",
-      image: "/images/project3.jpg",
+      image: "/images/booreal-print.png",
       tags: ["React", "TypeScript"],
       link: "https://booreal-lab.web.app/",
       github: "https://github.com/PapaMarakuja/booreal",
-      featured: false
+      featured: true
     },
     {
       id: 4,
       title: "Frogs Sports",
       description: "Novidades em breve.",
-      image: "/images/project3.jpg",
+      image: "",
       tags: ["React", "TypeScript", "Laravel"],
       link: "",
-      github: "https://github.com/PapaMarakuja/booreal",
-      featured: false
+      github: "https://github.com/Sapo-Coders/sports_frog",
+      featured: true
+    },
+    {
+      id: 5,
+      title: "Morada Portas",
+      description: "Site de apresentação elegante e profissional desenvolvido para a Morada Portas, destacando sua linha premium de produtos e serviços. Construído com React, Tailwind CSS e Framer Motion, apresenta um design sofisticado com catálogo de produtos para ressaltar a qualidade e expertise da marca no mercado.",
+      image: "",
+      tags: ["React", "TypeScript"],
+      link: "",
+      github: "https://github.com/PapaMarakuja",
+      featured: true
     },
   ];
 
@@ -148,16 +158,29 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
       className="bg-dark-lighter rounded-lg overflow-hidden project-card"
     >
       <div className="relative overflow-hidden h-48 group">
-        <motion.img
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover transition-all duration-500"
-          whileHover={{
-            scale: 1.1,
-            transition: { duration: 0.3 }
-          }}
-          loading='lazy'
-        />
+        {project.image ? (
+          <motion.img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-full object-cover transition-all duration-500"
+            whileHover={{
+              scale: 1.1,
+              transition: { duration: 0.3 }
+            }}
+            loading='lazy'
+          />
+        ) : (
+          <motion.div
+            className="w-full h-full flex items-center justify-center bg-gradient-to-br from-dark-light to-dark"
+            whileHover={{
+              scale: 1.05,
+              transition: { duration: 0.3 }
+            }}
+          >
+            <span className="text-8xl font-bold text-primary/30">?</span>
+            <span className="absolute text-sm text-white/60 mt-16">Em breve</span>
+          </motion.div>
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
 
         {project.featured && (

@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 
 const About = () => {
-  // Skills data
   const skills = [
     { name: "Angular", level: 95 },
     { name: "TypeScript", level: 90 },
@@ -13,7 +12,6 @@ const About = () => {
     { name: "Laravel", level: 15 },
   ];
 
-  // Animation variants for skills
   const skillVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -26,7 +24,6 @@ const About = () => {
     })
   };
 
-  // Motion blur effect for skill bars
   const handleSkillHover = (e: React.MouseEvent<HTMLDivElement>) => {
     const target = e.currentTarget;
     target.classList.add('blur-motion-active');
@@ -64,6 +61,7 @@ const About = () => {
                 src="./images/profile.png"
                 alt="Rafael Pereira"
                 className="w-full h-auto rounded-lg relative z-10"
+                loading='lazy'
               />
             </div>
           </motion.div>
@@ -80,14 +78,14 @@ const About = () => {
 
             <p className="text-gray-400 mb-6">
               Sou um desenvolvedor fullstack com 5 anos de experiência na Dimensão Sistemas,
-              onde tenho criado soluções web inovadoras desde o início da minha carreira.
+              onde tenho colaborado no desenvolvimento de uma solução web inovadora desde o início da minha carreira.
               Aos 22 anos, já desenvolvi uma forte expertise em tecnologias web modernas e uma
               paixão particular por desenvolvimento frontend.
             </p>
 
             <p className="text-gray-400 mb-6">
               Me especializo em construir aplicações responsivas e amigáveis usando React, TypeScript,
-              Angular, Vue.js e Laravel. Estou constantemente explorando novas tecnologias e abordagens
+              Angular. Estou constantemente explorando novas tecnologias e abordagens
               para criar melhores experiências de usuário e soluções mais eficientes.
             </p>
 
@@ -139,14 +137,14 @@ const About = () => {
             <EducationItem
               degree="Técnico em Desenvolvimento de Sistemas"
               institution="IFSC - Campus Rau"
-              period="2019 - 2020"
+              period="2019 - 2021"
               description="Durante o curso, tive a oportunidade de aprender desde o inglês básico até o técnico, mergulhei na lógica de programação usando Java, explorei conceitos fundamentais de algoritmos e dei meus primeiros passos no desenvolvimento web."
             />
 
             <EducationItem
               degree="Tecnólogo em Análise e Desenvolvimento de Sistemas"
               institution="SENAC"
-              period="2020 - 2024"
+              period="2021 - 2024"
               description="Durante o curso, tive uma imersão profunda em desenvolvimento de software, aprendendo C#, React, React Native e Banco de Dados. Além das habilidades técnicas, desenvolvi uma visão empreendedora e inovadora, compreendendo regras de negócio e boas práticas de desenvolvimento. O ambiente de estudo intensivo e imersivo me permitiu crescer tanto como desenvolvedor quanto como profissional."
             />
           </div>
@@ -160,7 +158,7 @@ const About = () => {
           viewport={{ once: true }}
           className="mt-20"
         >
-          <h2 className="text-3xl font-bold mb-10 text-center">Skills & Expertise</h2>
+          <h2 className="text-3xl font-bold mb-10 text-center">Habilidades & Expertise</h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {skills.map((skill, i) => (
@@ -191,38 +189,6 @@ const About = () => {
             ))}
           </div>
         </motion.div>
-
-        {/* Certifications Section */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-20"
-        >
-          <h2 className="text-3xl font-bold mb-10 text-center">Certificados</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <CertificationCard
-              title="Título teste"
-              issuer="Local teste"
-              date="2020"
-              icon="fab fa-react"
-            />
-            <CertificationCard
-              title="Título teste"
-              issuer="Local teste"
-              date="2020"
-              icon="fab fa-react"
-            />
-            <CertificationCard
-              title="Título teste"
-              issuer="Local teste"
-              date="2020"
-              icon="fab fa-react"
-            />
-          </div>
-        </motion.div> */}
       </div>
     </div>
   );
@@ -296,37 +262,5 @@ const EducationItem = ({
     </div>
   );
 };
-
-// // Certification Card Component
-// const CertificationCard = ({
-//   title,
-//   issuer,
-//   date,
-//   icon
-// }: {
-//   title: string;
-//   issuer: string;
-//   date: string;
-//   icon: string
-// }) => {
-//   return (
-//     <motion.div
-//       whileHover={{ y: -10 }}
-//       className="bg-dark-lighter p-6 rounded-lg border border-dark-light hover:border-primary/30 transition-all duration-300"
-//     >
-//       <div className="text-primary text-3xl mb-4">
-//         <i className={icon}></i>
-//       </div>
-//       <h3 className="text-lg font-bold mb-2">{title}</h3>
-//       <div className="flex items-center text-gray-400">
-//         <span>{issuer}</span>
-//         <span className="mx-2">•</span>
-//         <span>{date}</span>
-//       </div>
-//     </motion.div>
-//   );
-// };
-
-// Remove the Skills component since we've integrated it into the About component
 
 export default About;

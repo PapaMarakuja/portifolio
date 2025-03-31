@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-// Project data interface
 interface Project {
   id: number;
   title: string;
@@ -14,20 +13,16 @@ interface Project {
 }
 
 const Projects = () => {
-  // Project categories
-  // Update categories
-  const categories = ['Todos', 'React', 'Angular', 'Vue.js'];
-  const [activeCategory, setActiveCategory] = useState('All');
+  const categories = ['Todos', 'React', 'Angular', 'Laravel'];
+  const [activeCategory, setActiveCategory] = useState('Todos');
 
-  // Projects data
-  // Update project descriptions
   const projects: Project[] = [
     {
       id: 1,
       title: "uNotes",
       description: "Aplicativo web de anotações intuitivo e moderno desenvolvido como projeto final de graduação. Oferece funcionalidades de organização, categorização e compartilhamento de notas, com interface responsiva e amigável construída usando React, TypeScript e estilização moderna com Tailwind CSS e DaisyUI.",
       image: "/images/project1.jpg",
-      tags: ["React", "TypeScript", "Tailwind CSS"],
+      tags: ["React", "TypeScript"],
       link: "",
       github: "https://github.com/S3verino/uNotes_app",
       featured: true
@@ -37,7 +32,7 @@ const Projects = () => {
       title: "Mia Sotel - Portifolio",
       description: "Portfolio profissional elegante e interativo desenvolvido para showcase de trabalhos criativos. Construído com React e Tailwind CSS, apresenta uma experiência de usuário fluida com animações suaves, design responsivo e seções organizadas para destacar projetos e habilidades.",
       image: "/images/project2.jpg",
-      tags: ["React.js", "TypeScript", "Tailwind CSS"],
+      tags: ["React", "TypeScript"],
       link: "https://miasotel.com/",
       github: "https://github.com/PapaMarakuja/mia-website",
       featured: true
@@ -47,15 +42,24 @@ const Projects = () => {
       title: "Booreal - Site de apresentação",
       description: "Landing page corporativa moderna e dinâmica desenvolvida para a Booreal. Implementada com React, Tailwind CSS e Framer Motion, oferece uma experiência imersiva com animações fluidas, design responsivo e seções interativas que apresentam os serviços e valores da empresa de forma envolvente.",
       image: "/images/project3.jpg",
-      tags: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      tags: ["React", "TypeScript"],
       link: "https://booreal-lab.web.app/",
+      github: "https://github.com/PapaMarakuja/booreal",
+      featured: false
+    },
+    {
+      id: 4,
+      title: "Frogs Sports",
+      description: "Novidades em breve.",
+      image: "/images/project3.jpg",
+      tags: ["React", "TypeScript", "Laravel"],
+      link: "",
       github: "https://github.com/PapaMarakuja/booreal",
       featured: false
     },
   ];
 
-  // Filter projects based on active category
-  const filteredProjects = activeCategory === 'All'
+  const filteredProjects = activeCategory === 'Todos'
     ? projects
     : projects.filter(project => project.tags.includes(activeCategory));
 
@@ -134,7 +138,6 @@ const Projects = () => {
   );
 };
 
-// Project Card Component
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
     <motion.div
@@ -153,6 +156,7 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             scale: 1.1,
             transition: { duration: 0.3 }
           }}
+          loading='lazy'
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
 

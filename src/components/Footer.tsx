@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { getSelectedSocialLinks } from '../utils/Utils';
 
 const Footer = () => {
   return (
@@ -19,14 +20,18 @@ const Footer = () => {
               Desenvolvedor Fullstack com paixão por soluções criativas
             </p>
           </div>
-          
+
           <div className="flex space-x-4">
-            <SocialLink href="https://github.com/" icon="github" />
-            <SocialLink href="https://linkedin.com/in/" icon="linkedin" />
-            <SocialLink href="https://twitter.com/" icon="twitter" />
+            {getSelectedSocialLinks(['github', 'linkedin', 'instagram']).map((social, index) => (
+              <SocialLink
+                key={index}
+                href={social.url}
+                icon={social.id}
+              />
+            ))}
           </div>
         </div>
-        
+
         <div className="mt-8 pt-6 border-t border-dark-light text-center text-gray-400 text-sm">
           <p className="text-gray-500 text-sm">
             © {new Date().getFullYear()} Rafael Pereira. Todos os direitos reservados.

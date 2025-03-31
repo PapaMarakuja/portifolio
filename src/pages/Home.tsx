@@ -166,7 +166,6 @@ const Home = () => {
   );
 };
 
-// Skill Card Component
 const SkillCard = ({ skill, index }: { skill: { name: string; icon: string; level: number }; index: number }) => {
   return (
     <motion.div
@@ -197,7 +196,6 @@ const SkillCard = ({ skill, index }: { skill: { name: string; icon: string; leve
   );
 };
 
-// Project Card Component
 const ProjectCard = ({ project, index }: {
   project: {
     title: string;
@@ -230,6 +228,7 @@ const ProjectCard = ({ project, index }: {
             filter: "blur(4px)",
             transition: { duration: 0.3 }
           }}
+          loading='lazy'
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
       </div>
@@ -261,7 +260,6 @@ const ProjectCard = ({ project, index }: {
   );
 };
 
-// Sample data
 const skills = [
   { name: "Angular", icon: "fab fa-angular", level: 95 },
   { name: "TypeScript", icon: "fab fa-js", level: 90 },
@@ -277,21 +275,21 @@ const featuredProjects = [
   {
     title: "uNotes",
     description: "Projeto de anotações desenvolvido com React, TypeScript, Tailwind CSS e DaisyUI. Desenvolvido durante a faculdade como projeto final.",
-    image: "/images/project1.jpg",
+    image: "/images/uNotes-print.png",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     link: ""
   },
   {
     title: "Mia Sotel - Portifolio",
     description: "Portifólio desenvolvido com React e Tailwind CSS para apresentação pessoal.",
-    image: "/images/project2.jpg",
+    image: "/images/miasotel-print.png",
     tags: ["React.js", "TypeScript", "Tailwind CSS"],
     link: "https://miasotel.com/"
   },
   {
     title: "Booreal - Site de apresentação",
     description: "Site desenvolvido com React, Tailwind CSS e Framer Motion para apresentação de uma empresa.",
-    image: "/images/project3.jpg",
+    image: "/images/booreal-print.png",
     tags: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     link: "https://booreal-lab.web.app/"
   }

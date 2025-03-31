@@ -10,6 +10,7 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import { initializeApp } from "firebase/app";
 import { firebaseConfig } from './firebase/config';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -28,7 +29,6 @@ const AnimatedRoutes = () => {
 
 function App() {
   useEffect(() => {
-    // Initialize smooth scrolling
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),

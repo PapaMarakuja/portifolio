@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { generateMailtoLink, getSelectedSocialLinks } from '../utils/Utils';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,14 +24,20 @@ const Contact = () => {
     setIsSubmitting(true);
     setSubmitError('');
 
-    // Simulate form submission
     try {
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      const body =
+        `Nome: ${formData.name}\n` +
+        `Email: ${formData.email}\n\n` +
+        `${formData.message}`;
+
+      window.location.href = generateMailtoLink('rafael.p.24.03@gmail.com', formData.subject, body);
+
+      await new Promise(resolve => setTimeout(resolve, 500));
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error(error);
-      setSubmitError('Something went wrong. Please try again later.');
+      setSubmitError('Algo deu errado. Por favor, tente novamente mais tarde.');
     } finally {
       setIsSubmitting(false);
     }
@@ -193,10 +200,13 @@ const Contact = () => {
               <div className="mt-10">
                 <h3 className="text-xl font-bold mb-4">Conecte-se Comigo</h3>
                 <div className="flex space-x-4">
-                  <SocialLink href="https://github.com/" icon="github" />
-                  <SocialLink href="https://linkedin.com/in/" icon="linkedin" />
-                  <SocialLink href="https://twitter.com/" icon="twitter" />
-                  <SocialLink href="https://instagram.com/" icon="instagram" />
+                  {getSelectedSocialLinks(['github', 'linkedin', 'instagram']).map((social, index) => (
+                    <SocialLink
+                      key={index}
+                      href={social.url}
+                      icon={social.id}
+                    />
+                  ))}
                 </div>
               </div>
 
@@ -246,7 +256,6 @@ const Contact = () => {
   );
 };
 
-// Contact Info Item Component
 const ContactInfoItem = ({
   icon,
   title,
@@ -280,7 +289,6 @@ const ContactInfoItem = ({
   );
 };
 
-// Social Link Component
 const SocialLink = ({ href, icon }: { href: string; icon: string }) => {
   return (
     <motion.a

@@ -53,7 +53,7 @@ const Home = () => {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="flex flex-col sm:flex-row justify-center gap-4"
             >
-              <Link to="/projects">
+              <Link to="/about">
                 <motion.button
                   className="px-6 py-3 bg-primary text-dark font-medium rounded-md hover:bg-primary-dark transition-colors"
                   whileHover={{

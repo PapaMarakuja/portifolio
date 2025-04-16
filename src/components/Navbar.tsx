@@ -150,18 +150,6 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
-            <li>
-              <motion.a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-primary text-dark font-medium rounded-md hover:bg-primary-dark transition-colors"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Currículo
-              </motion.a>
-            </li>
           </ul>
         </nav>
       </div>
@@ -215,25 +203,6 @@ const Navbar = () => {
                     </Link>
                   </motion.li>
                 ))}
-                <motion.li
-                  custom={navLinks.length}
-                  variants={menuItemVariants}
-                  initial="hidden"
-                  animate="visible"
-                  exit="exit"
-                  className="pt-6"
-                >
-                  <motion.a
-                    href="/resume.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block px-6 py-3 bg-primary text-dark font-bold rounded-md hover:bg-primary-light transition-colors text-lg"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    Currículo
-                  </motion.a>
-                </motion.li>
               </ul>
               <motion.div
                 className="mt-auto pt-10 flex flex-col space-y-4"

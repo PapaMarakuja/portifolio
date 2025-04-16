@@ -1,37 +1,6 @@
 import { motion } from 'framer-motion';
 
 const About = () => {
-  const skills = [
-    { name: "Angular", level: 95 },
-    { name: "TypeScript", level: 90 },
-    { name: "Tailwind CSS", level: 90 },
-    { name: "React", level: 80 },
-    { name: "C#", level: 80 },
-    { name: "Node.js", level: 75 },
-    { name: "Vue.js", level: 30 },
-    { name: "Laravel", level: 15 },
-  ];
-
-  const skillVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.5
-      }
-    })
-  };
-
-  const handleSkillHover = (e: React.MouseEvent<HTMLDivElement>) => {
-    const target = e.currentTarget;
-    target.classList.add('blur-motion-active');
-    setTimeout(() => {
-      target.classList.remove('blur-motion-active');
-    }, 500);
-  };
-
   return (
     <div className="pt-24 pb-16">
       <div className="container mx-auto px-4 md:px-6">
@@ -160,33 +129,120 @@ const About = () => {
         >
           <h2 className="text-3xl font-bold mb-10 text-center">Habilidades & Expertise</h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skills.map((skill, i) => (
-              <motion.div
-                key={skill.name}
-                custom={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={skillVariants}
-                onMouseEnter={handleSkillHover}
-                className="bg-dark-lighter p-6 rounded-lg hover:shadow-lg hover:shadow-primary/10 transition-all duration-300"
-              >
-                <div className="flex justify-between items-center mb-3">
-                  <h3 className="text-lg font-medium">{skill.name}</h3>
-                  <span className="text-primary font-semibold">{skill.level}%</span>
+          <div className="space-y-8">
+            <p className="text-gray-400 text-center max-w-3xl mx-auto mb-8">
+              Sou um profissional que se adapta rapidamente a novas tecnologias e desafios.
+              Como um "quick learner", estou constantemente expandindo meu conjunto de habilidades
+              e buscando aprimorar meu conhecimento técnico para entregar soluções inovadoras.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-dark-light/30 p-6 rounded-lg hover:bg-dark-light/50 transition-all">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <span className="text-primary mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                  Desenvolvimento Frontend
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  Especializado em criar interfaces modernas e responsivas com foco na experiência do usuário.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">React</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">TypeScript</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Angular</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">HTML/CSS</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Tailwind CSS</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Bootstrap CSS</span>
                 </div>
-                <div className="w-full bg-dark h-2 rounded-full overflow-hidden">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ duration: 1, delay: 0.2 }}
-                    viewport={{ once: true }}
-                    className="h-full bg-gradient-to-r from-primary to-primary-light rounded-full"
-                  />
+              </div>
+
+              <div className="bg-dark-light/30 p-6 rounded-lg hover:bg-dark-light/50 transition-all">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <span className="text-primary mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                  Desenvolvimento Backend
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  Experiência na construção de APIs robustas e sistemas escaláveis com foco em performance.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Node.js</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">C#</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Python</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">RESTful APIs</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">OData</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">GraphQL</span>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+
+              <div className="bg-dark-light/30 p-6 rounded-lg hover:bg-dark-light/50 transition-all">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <span className="text-primary mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M3 12v3c0 1.657 3.134 3 7 3s7-1.343 7-3v-3c0 1.657-3.134 3-7 3s-7-1.343-7-3z" />
+                      <path d="M3 7v3c0 1.657 3.134 3 7 3s7-1.343 7-3V7c0 1.657-3.134 3-7 3S3 8.657 3 7z" />
+                      <path d="M17 5c0 1.657-3.134 3-7 3S3 6.657 3 5s3.134-3 7-3 7 1.343 7 3z" />
+                    </svg>
+                  </span>
+                  Banco de Dados
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  Conhecimento em modelagem, otimização e gerenciamento de bancos de dados relacionais e não-relacionais.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">MySQL</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">SQL Server</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">PostgreSQL</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">ORM</span>
+                </div>
+              </div>
+
+              <div className="bg-dark-light/30 p-6 rounded-lg hover:bg-dark-light/50 transition-all">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <span className="text-primary mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                    </svg>
+                  </span>
+                  Desenvolvimento Mobile & DevOps
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  Experiência em desenvolvimento mobile e práticas modernas de CI/CD para entrega contínua.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Git</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Scrum</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">UI/UX</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Metodologias Ágeis</span>
+                </div>
+              </div>
+
+              <div className="bg-dark-light/30 p-6 rounded-lg hover:bg-dark-light/50 transition-all">
+                <h3 className="text-xl font-bold mb-4 flex items-center">
+                  <span className="text-primary mr-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                      <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+                    </svg>
+                  </span>
+                  Idiomas & Comunicação
+                </h3>
+                <p className="text-gray-400 mb-4">
+                  Comunicação eficaz em português e inglês, permitindo colaboração em equipes internacionais,
+                  compreensão de documentação técnica e participação ativa em reuniões e apresentações.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Inglês Profissional</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Comunicação</span>
+                  <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">Documentação</span>
+                </div>
+              </div>
+            </div>
           </div>
         </motion.div>
       </div>

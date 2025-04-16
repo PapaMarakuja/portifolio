@@ -261,11 +261,15 @@ const ProjectCard = ({ project, index }: {
 };
 
 const skills = [
-  { name: "Angular", icon: "fab fa-angular", level: 95 },
+  { name: "Inglês", icon: "fas fa-language", level: 95 },
+  { name: "Angular", icon: "fab fa-angular", level: 92 },
   { name: "TypeScript", icon: "fab fa-js", level: 90 },
   { name: "Tailwind CSS", icon: "fab fa-css3", level: 90 },
+  { name: "Bootstrap CSS", icon: "fab fa-bootstrap", level: 87 },
+  { name: "C#", icon: "fab fa-csharp", level: 85 },
   { name: "React", icon: "fab fa-react", level: 80 },
-  { name: "C#", icon: "fab fa-csharp", level: 80 },
+  { name: "SQL Server", icon: "fas fa-database", level: 79 },
+  { name: "PostgreSQL", icon: "fas fa-database", level: 78 },
   { name: "Node.js", icon: "fab fa-node-js", level: 75 },
   { name: "Vue.js", icon: "fab fa-vuejs", level: 30 },
   { name: "Laravel", icon: "fab fa-laravel", level: 15 },

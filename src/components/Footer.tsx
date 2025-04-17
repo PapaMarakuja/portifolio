@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion';
 import { getSelectedSocialLinks } from '../utils/Utils';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation('common');
+
   return (
     <footer className="bg-dark-lighter py-8 border-t border-dark-light">
       <div className="container mx-auto px-4 md:px-6">
@@ -17,7 +20,7 @@ const Footer = () => {
               <span className="ml-1 text-white font-bold text-lg">Pereira</span>
             </motion.div>
             <p className="text-gray-400">
-              Desenvolvedor Fullstack com paixão por soluções criativas
+              {t('footer.tagline')}
             </p>
           </div>
 
@@ -34,7 +37,7 @@ const Footer = () => {
 
         <div className="mt-8 pt-6 border-t border-dark-light text-center text-gray-400 text-sm">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} Rafael Pereira. Todos os direitos reservados.
+            {t('footer.copyright', { year: new Date().getFullYear() })}
           </p>
         </div>
       </div>

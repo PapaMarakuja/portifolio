@@ -1,0 +1,94 @@
+{
+  "hero": {
+    "title": "About Me",
+    "description": "Learn more about my journey, experience, and what motivates me as a developer."
+  },
+  "profile": {
+    "name": "Rafael Pereira",
+    "title": "Fullstack Developer",
+    "bio1": "I'm a fullstack developer with 5 years of experience at Dimensão Sistemas, where I've been collaborating on the development of an innovative web solution since the beginning of my career. At 22, I've already developed strong expertise in modern web technologies and a particular passion for frontend development.",
+    "bio2": "I specialize in building responsive and user-friendly applications using React, TypeScript, and Angular. I'm constantly exploring new technologies and approaches to create better user experiences and more efficient solutions."
+  },
+  "info": {
+    "age": {
+      "label": "Age",
+      "value": "22"
+    },
+    "experience": {
+      "label": "Experience",
+      "value": "5 Years"
+    },
+    "location": {
+      "label": "Location",
+      "value": "Brazil"
+    },
+    "freelance": {
+      "label": "Freelance",
+      "value": "Available"
+    }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "items": {
+      "dimensao": {
+        "title": "Fullstack Developer",
+        "company": "Dimensão Sistemas",
+        "period": "2019 - Present",
+        "description": {
+          "0": "I started my journey as an intern, where I had the opportunity to develop the company's institutional website",
+          "1": "Currently, I work on the development and maintenance of the company's main app, implementing improvements and new features",
+          "2": "I significantly contributed to the implementation of dark mode in the app, improving the user experience",
+          "3": "I dedicate myself to problem-solving and optimizing application performance",
+          "4": "I have the pleasure of sharing knowledge and mentoring two team colleagues in their professional development"
+        }
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "items": {
+      "ifsc": {
+        "degree": "Technical Degree in Systems Development",
+        "institution": "IFSC - Campus Rau",
+        "period": "2019 - 2021",
+        "description": "During the course, I had the opportunity to learn from basic to technical English, dove into programming logic using Java, explored fundamental algorithm concepts, and took my first steps in web development."
+      },
+      "senac": {
+        "degree": "Technology Degree in Systems Analysis and Development",
+        "institution": "SENAC",
+        "period": "2021 - 2024",
+        "description": "During the course, I had a deep immersion in software development, learning C#, React, React Native, and Database. Beyond technical skills, I developed an entrepreneurial and innovative vision, understanding business rules and good development practices. The intensive and immersive study environment allowed me to grow both as a developer and as a professional."
+      }
+    }
+  },
+  "skills": {
+    "title": "Skills & Expertise",
+    "description": "I'm a professional who adapts quickly to new technologies and challenges. As a quick learner, I'm constantly expanding my skill set and seeking to improve my technical knowledge to deliver innovative solutions.",
+    "categories": {
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Specialized in creating modern and responsive interfaces with a focus on user experience."
+      },
+      "backend": {
+        "title": "Backend Development",
+        "description": "Experience in building robust APIs and scalable systems."
+      },
+      "database": {
+        "title": "Database",
+        "description": "Knowledge in modeling, optimization, and management of relational and non-relational databases."
+      },
+      "devops": {
+        "title": "Mobile Development & DevOps",
+        "description": "Experience in mobile development and modern CI/CD practices for continuous delivery.",
+        "agile": "Agile Methodologies"
+      },
+      "languages": {
+        "title": "Languages & Communication",
+        "description": "Effective communication in Portuguese and English, enabling collaboration in international teams, understanding of technical documentation, and active participation in meetings and presentations.",
+        "english": "Professional English",
+        "communication": "Communication",
+        "documentation": "Documentation"
+      }
+    }
+  }
+}

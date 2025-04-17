@@ -1,0 +1,27 @@
+{
+  "navigation": {
+    "home": "Início",
+    "about": "Sobre mim",
+    "projects": "Projetos",
+    "contact": "Contato"
+  },
+  "buttons": {
+    "readMore": "Leia mais",
+    "viewProject": "Visualizar Projeto",
+    "send": "Enviar",
+    "download": "Download",
+    "aboutMe": "Sobre mim",
+    "contactMe": "Entre em contato"
+  },
+  "footer": {
+    "copyright": "© {{year}} Rafael Pereira. Todos os direitos reservados.",
+    "tagline": "Desenvolvedor Fullstack com paixão por soluções criativas"
+  },
+  "social": {
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "instagram": "Instagram"
+  }
+}

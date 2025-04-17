@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "title": "Meus Projetos",
+    "description": "Explore meus trabalhos recentes e veja como transformo ideias em realidade com código e criatividade."
+  },
+  "categories": {
+    "all": "Todos"
+  },
+  "items": {
+    "unotes": {
+      "title": "uNotes",
+      "description": "Aplicativo web de anotações intuitivo e moderno desenvolvido como projeto final de graduação. Oferece funcionalidades de organização, categorização e compartilhamento de notas, com interface responsiva e amigável construída usando React, TypeScript e estilização moderna com Tailwind CSS e DaisyUI."
+    },
+    "miasotel": {
+      "title": "Mia Sotel - Portfólio",
+      "description": "Portfolio profissional elegante e interativo desenvolvido para showcase de trabalhos criativos. Construído com React e Tailwind CSS, apresenta uma experiência de usuário fluida com animações suaves, design responsivo e seções organizadas para destacar projetos e habilidades."
+    },
+    "booreal": {
+      "title": "Booreal - Site de apresentação",
+      "description": "Landing page corporativa moderna e dinâmica desenvolvida para a Booreal. Implementada com React, Tailwind CSS e Framer Motion, oferece uma experiência imersiva com animações fluidas, design responsivo e seções interativas que apresentam os serviços e valores da empresa de forma envolvente."
+    },
+    "frogssports": {
+      "title": "Frogs Sports",
+      "description": "Novidades em breve."
+    },
+    "moradaportas": {
+      "title": "Morada Portas",
+      "description": "Site de apresentação elegante e profissional desenvolvido para a Morada Portas, destacando sua linha premium de produtos e serviços. Construído com React, Tailwind CSS e Framer Motion, apresenta um design sofisticado com catálogo de produtos para ressaltar a qualidade e expertise da marca no mercado."
+    }
+  },
+  "cta": {
+    "title": "Tem um projeto em mente?",
+    "description": "Estou sempre aberto a discutir novos projetos e ideias criativas. Vamos criar algo incrível juntos.",
+    "button": "Entre em Contato"
+  },
+  "comingSoon": "Em breve",
+  "new": "Novo!"
+}

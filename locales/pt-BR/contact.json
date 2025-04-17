@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "title": "Entre em Contato",
+    "description": "Tem uma pergunta ou quer trabalhar junto? Sinta-se à vontade para entrar em contato!"
+  },
+  "form": {
+    "title": "Envie-me uma Mensagem",
+    "nameLabel": "Nome",
+    "emailLabel": "E-mail",
+    "subjectLabel": "Assunto",
+    "subjectPlaceholder": "Selecione um assunto",
+    "subjectOptions": {
+      "job": "Oportunidade de Emprego",
+      "project": "Consulta de Projeto",
+      "collaboration": "Colaboração",
+      "other": "Outro"
+    },
+    "messageLabel": "Mensagem",
+    "submitButton": "Enviar Mensagem",
+    "submitting": "Enviando...",
+    "successMessage": "Obrigado pela sua mensagem! Entrarei em contato o mais breve possível.",
+    "errorMessage": "Algo deu errado. Por favor, tente novamente mais tarde."
+  },
+  "info": {
+    "title": "Informações de Contato",
+    "email": {
+      "title": "Email"
+    },
+    "phone": {
+      "title": "Telefone"
+    },
+    "location": {
+      "title": "Localização",
+      "value": "Santa Catarina, Brasil"
+    }
+  },
+  "social": {
+    "title": "Conecte-se Comigo"
+  },
+  "availability": {
+    "title": "Disponibilidade",
+    "description": "Atualmente disponível para trabalhos freelance e oportunidades em tempo integral.",
+    "status": "Disponível para novos projetos"
+  }
+}

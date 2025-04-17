@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "title": "Get in Touch",
+    "description": "Have a question or want to work together? Feel free to contact me!"
+  },
+  "form": {
+    "title": "Send Me a Message",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Select a subject",
+    "subjectOptions": {
+      "job": "Job Opportunity",
+      "project": "Project Inquiry",
+      "collaboration": "Collaboration",
+      "other": "Other"
+    },
+    "messageLabel": "Message",
+    "submitButton": "Send Message",
+    "submitting": "Sending...",
+    "successMessage": "Thank you for your message! I'll get back to you as soon as possible.",
+    "errorMessage": "Something went wrong. Please try again later."
+  },
+  "info": {
+    "title": "Contact Information",
+    "email": {
+      "title": "Email"
+    },
+    "phone": {
+      "title": "Phone"
+    },
+    "location": {
+      "title": "Location",
+      "value": "Santa Catarina, Brazil"
+    }
+  },
+  "social": {
+    "title": "Connect With Me"
+  },
+  "availability": {
+    "title": "Availability",
+    "description": "Currently available for freelance work and full-time opportunities.",
+    "status": "Available for new projects"
+  }
+}

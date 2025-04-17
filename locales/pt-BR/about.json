@@ -1,0 +1,94 @@
+{
+  "hero": {
+    "title": "Sobre Mim",
+    "description": "Conheça mais sobre minha jornada, experiência e o que me motiva como desenvolvedor."
+  },
+  "profile": {
+    "name": "Rafael Pereira",
+    "title": "Fullstack Developer",
+    "bio1": "Sou um desenvolvedor fullstack com 5 anos de experiência na Dimensão Sistemas, onde tenho colaborado no desenvolvimento de uma solução web inovadora desde o início da minha carreira. Aos 22 anos, já desenvolvi uma forte expertise em tecnologias web modernas e uma paixão particular por desenvolvimento frontend.",
+    "bio2": "Me especializo em construir aplicações responsivas e amigáveis usando React, TypeScript, Angular. Estou constantemente explorando novas tecnologias e abordagens para criar melhores experiências de usuário e soluções mais eficientes."
+  },
+  "info": {
+    "age": {
+      "label": "Idade",
+      "value": "22"
+    },
+    "experience": {
+      "label": "Experiência",
+      "value": "5 Anos"
+    },
+    "location": {
+      "label": "Localização",
+      "value": "Brasil"
+    },
+    "freelance": {
+      "label": "Freelance",
+      "value": "Disponível"
+    }
+  },
+  "experience": {
+    "title": "Experiência Profissional",
+    "items": {
+      "dimensao": {
+        "title": "Fullstack Developer",
+        "company": "Dimensão Sistemas",
+        "period": "2019 - Presente",
+        "description": {
+          "0": "Iniciei minha jornada como estagiário, onde tive a oportunidade de desenvolver o website institucional da empresa",
+          "1": "Atualmente, trabalho no desenvolvimento e manutenção do app principal da empresa, implementando melhorias e novas funcionalidades",
+          "2": "Contribuí significativamente com a implementação do modo escuro no app, melhorando a experiência dos usuários",
+          "3": "Dedico-me à resolução de problemas e otimização do desempenho das aplicações",
+          "4": "Tenho o prazer de compartilhar conhecimento e mentorear dois colegas de equipe em seu desenvolvimento profissional"
+        }
+      }
+    }
+  },
+  "education": {
+    "title": "Formação",
+    "items": {
+      "ifsc": {
+        "degree": "Técnico em Desenvolvimento de Sistemas",
+        "institution": "IFSC - Campus Rau",
+        "period": "2019 - 2021",
+        "description": "Durante o curso, tive a oportunidade de aprender desde o inglês básico até o técnico, mergulhei na lógica de programação usando Java, explorei conceitos fundamentais de algoritmos e dei meus primeiros passos no desenvolvimento web."
+      },
+      "senac": {
+        "degree": "Tecnólogo em Análise e Desenvolvimento de Sistemas",
+        "institution": "SENAC",
+        "period": "2021 - 2024",
+        "description": "Durante o curso, tive uma imersão profunda em desenvolvimento de software, aprendendo C#, React, React Native e Banco de Dados. Além das habilidades técnicas, desenvolvi uma visão empreendedora e inovadora, compreendendo regras de negócio e boas práticas de desenvolvimento. O ambiente de estudo intensivo e imersivo me permitiu crescer tanto como desenvolvedor quanto como profissional."
+      }
+    }
+  },
+  "skills": {
+    "title": "Habilidades & Expertise",
+    "description": "Sou um profissional que se adapta rapidamente a novas tecnologias e desafios. Como um \"quick learner\", estou constantemente expandindo meu conjunto de habilidades e buscando aprimorar meu conhecimento técnico para entregar soluções inovadoras.",
+    "categories": {
+      "frontend": {
+        "title": "Desenvolvimento Frontend",
+        "description": "Especializado em criar interfaces modernas e responsivas com foco na experiência do usuário."
+      },
+      "backend": {
+        "title": "Desenvolvimento Backend",
+        "description": "Experiência na construção de APIs robustas e sistemas escaláveis."
+      },
+      "database": {
+        "title": "Banco de Dados",
+        "description": "Conhecimento em modelagem, otimização e gerenciamento de bancos de dados relacionais e não-relacionais."
+      },
+      "devops": {
+        "title": "Desenvolvimento Mobile & DevOps",
+        "description": "Experiência em desenvolvimento mobile e práticas modernas de CI/CD para entrega contínua.",
+        "agile": "Metodologias Ágeis"
+      },
+      "languages": {
+        "title": "Idiomas & Comunicação",
+        "description": "Comunicação eficaz em português e inglês, permitindo colaboração em equipes internacionais, compreensão de documentação técnica e participação ativa em reuniões e apresentações.",
+        "english": "Inglês Profissional",
+        "communication": "Comunicação",
+        "documentation": "Documentação"
+      }
+    }
+  }
+}

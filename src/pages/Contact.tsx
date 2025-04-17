@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { generateMailtoLink, getSelectedSocialLinks } from '../utils/Utils';
 
 const Contact = () => {
+  const { t } = useTranslation(['contact', 'common']);
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,8 +29,8 @@ const Contact = () => {
 
     try {
       const body =
-        `Nome: ${formData.name}\n` +
-        `Email: ${formData.email}\n\n` +
+        `${t('contact:form.nameLabel')}: ${formData.name}\n` +
+        `${t('contact:form.emailLabel')}: ${formData.email}\n\n` +
         `${formData.message}`;
 
       window.location.href = generateMailtoLink('rafael.p.24.03@gmail.com', formData.subject, body);
@@ -37,7 +40,7 @@ const Contact = () => {
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error(error);
-      setSubmitError('Algo deu errado. Por favor, tente novamente mais tarde.');
+      setSubmitError(t('contact:form.errorMessage'));
     } finally {
       setIsSubmitting(false);
     }
@@ -53,9 +56,9 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Entre em Contato</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('contact:hero.title')}</h1>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-            Tem uma pergunta ou quer trabalhar junto? Sinta-se à vontade para entrar em contato!
+            {t('contact:hero.description')}
           </p>
         </motion.div>
 
@@ -68,7 +71,7 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="bg-dark-lighter p-8 rounded-lg border border-dark-light">
-              <h2 className="text-2xl font-bold mb-6">Envie-me uma Mensagem</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('contact:form.title')}</h2>
 
               {submitSuccess ? (
                 <motion.div
@@ -76,12 +79,12 @@ const Contact = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="bg-primary/20 border border-primary/30 text-white p-4 rounded-md mb-6"
                 >
-                  <p>Obrigado pela sua mensagem! Entrarei em contato o mais breve possível.</p>
+                  <p>{t('contact:form.successMessage')}</p>
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit}>
                   <div className="mb-4">
-                    <label htmlFor="name" className="block text-gray-300 mb-2">Nome</label>
+                    <label htmlFor="name" className="block text-gray-300 mb-2">{t('contact:form.nameLabel')}</label>
                     <input
                       type="text"
                       id="name"
@@ -94,7 +97,7 @@ const Contact = () => {
                   </div>
 
                   <div className="mb-4">
-                    <label htmlFor="email" className="block text-gray-300 mb-2">E-mail</label>
+                    <label htmlFor="email" className="block text-gray-300 mb-2">{t('contact:form.emailLabel')}</label>
                     <input
                       type="email"
                       id="email"
@@ -107,7 +110,7 @@ const Contact = () => {
                   </div>
 
                   <div className="mb-4">
-                    <label htmlFor="subject" className="block text-gray-300 mb-2">Assunto</label>
+                    <label htmlFor="subject" className="block text-gray-300 mb-2">{t('contact:form.subjectLabel')}</label>
                     <select
                       id="subject"
                       name="subject"
@@ -116,16 +119,16 @@ const Contact = () => {
                       required
                       className="w-full bg-dark border border-dark-light rounded-md px-4 py-2 text-white focus:outline-none focus:border-primary transition-colors"
                     >
-                      <option value="">Selecione um assunto</option>
-                      <option value="Job Opportunity">Oportunidade de Emprego</option>
-                      <option value="Project Inquiry">Consulta de Projeto</option>
-                      <option value="Collaboration">Colaboração</option>
-                      <option value="Other">Outro</option>
+                      <option value="">{t('contact:form.subjectPlaceholder')}</option>
+                      <option value="Job Opportunity">{t('contact:form.subjectOptions.job')}</option>
+                      <option value="Project Inquiry">{t('contact:form.subjectOptions.project')}</option>
+                      <option value="Collaboration">{t('contact:form.subjectOptions.collaboration')}</option>
+                      <option value="Other">{t('contact:form.subjectOptions.other')}</option>
                     </select>
                   </div>
 
                   <div className="mb-6">
-                    <label htmlFor="message" className="block text-gray-300 mb-2">Mensagem</label>
+                    <label htmlFor="message" className="block text-gray-300 mb-2">{t('contact:form.messageLabel')}</label>
                     <textarea
                       id="message"
                       name="message"
@@ -157,9 +160,9 @@ const Contact = () => {
                           <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                           <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                         </svg>
-                        Enviando...
+                        {t('contact:form.submitting')}
                       </span>
-                    ) : 'Enviar Mensagem'}
+                    ) : t('contact:form.submitButton')}
                   </motion.button>
                 </form>
               )}
@@ -173,32 +176,32 @@ const Contact = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div className="bg-dark-lighter p-8 rounded-lg border border-dark-light h-full">
-              <h2 className="text-2xl font-bold mb-6">Informações de Contato</h2>
+              <h2 className="text-2xl font-bold mb-6">{t('contact:info.title')}</h2>
 
               <div className="space-y-6">
                 <ContactInfoItem
                   icon="fas fa-envelope"
-                  title="Email"
+                  title={t('contact:info.email.title')}
                   value="rafael.p.24.03@gmail.com"
                   link="mailto:rafael.p.24.03@gmail.com"
                 />
 
                 <ContactInfoItem
                   icon="fas fa-phone"
-                  title="Phone"
+                  title={t('contact:info.phone.title')}
                   value="+55 (47) 99237-3782"
                   link="tel:+5547992373782"
                 />
 
                 <ContactInfoItem
                   icon="fas fa-map-marker-alt"
-                  title="Location"
-                  value="Santa Catarina, Brasil"
+                  title={t('contact:info.location.title')}
+                  value={t('contact:info.location.value')}
                 />
               </div>
 
               <div className="mt-10">
-                <h3 className="text-xl font-bold mb-4">Conecte-se Comigo</h3>
+                <h3 className="text-xl font-bold mb-4">{t('contact:social.title')}</h3>
                 <div className="flex space-x-4">
                   {getSelectedSocialLinks(['github', 'linkedin', 'whatsapp', 'instagram']).map((social, index) => (
                     <SocialLink
@@ -211,14 +214,14 @@ const Contact = () => {
               </div>
 
               <div className="mt-10 pt-6 border-t border-dark-light">
-                <h3 className="text-xl font-bold mb-4">Disponibilidade</h3>
+                <h3 className="text-xl font-bold mb-4">{t('contact:availability.title')}</h3>
                 <p className="text-gray-400">
-                  Atualmente disponível para trabalhos freelance e oportunidades em tempo integral.
+                  {t('contact:availability.description')}
                 </p>
                 <div className="mt-4 bg-dark p-4 rounded-md">
                   <div className="flex items-center">
                     <div className="w-3 h-3 bg-green-500 rounded-full mr-2 animate-pulse"></div>
-                    <span className="text-green-400 font-medium">Disponível para novos projetos</span>
+                    <span className="text-green-400 font-medium">{t('contact:availability.status')}</span>
                   </div>
                 </div>
               </div>

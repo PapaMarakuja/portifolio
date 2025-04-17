@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "greeting": "Hello, I am",
+    "name": "Rafael Pereira",
+    "title": "Fullstack Developer passionate about creative solutions",
+    "scrollIndicator": "Scroll down"
+  },
+  "skills": {
+    "title": "My Skills",
+    "description": "With 5 years of experience, I've developed expertise in various technologies focusing on creating responsive and interactive web applications."
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "description": "Here are some of my recent projects that demonstrate my skills and expertise.",
+    "viewAll": "View all projects"
+  },
+  "featuredProjects": {
+    "uNotes": {
+      "title": "uNotes",
+      "description": "Note-taking application developed with React, TypeScript, Tailwind CSS, and DaisyUI. Developed during college as a final project."
+    },
+    "miaSotel": {
+      "title": "Mia Sotel - Portfolio",
+      "description": "Portfolio developed with React and Tailwind CSS for personal presentation."
+    },
+    "booreal": {
+      "title": "Booreal - Presentation Site",
+      "description": "Website developed with React, Tailwind CSS, and Framer Motion for company presentation."
+    }
+  }
+}

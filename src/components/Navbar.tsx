@@ -2,12 +2,15 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { getAllSocialLinks } from '../utils/Utils';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const socialLinks = getAllSocialLinks();
   const location = useLocation();
+  const { t } = useTranslation('common');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,10 +55,10 @@ const Navbar = () => {
   };
 
   const navLinks = [
-    { path: '/', label: 'Início' },
-    { path: '/about', label: 'Sobre' },
-    { path: '/projects', label: 'Projetos' },
-    { path: '/contact', label: 'Contato' },
+    { path: '/', label: t('navigation.home') },
+    { path: '/about', label: t('navigation.about') },
+    { path: '/projects', label: t('navigation.projects') },
+    { path: '/contact', label: t('navigation.contact') },
   ];
 
   const menuItemVariants = {
@@ -150,6 +153,11 @@ const Navbar = () => {
                 </Link>
               </li>
             ))}
+
+            {/* Language switcher for desktop */}
+            <li className="ml-2">
+              <LanguageSwitcher />
+            </li>
           </ul>
         </nav>
       </div>
@@ -203,7 +211,22 @@ const Navbar = () => {
                     </Link>
                   </motion.li>
                 ))}
+
+                {/* Language switcher for mobile */}
+                <motion.li
+                  custom={navLinks.length}
+                  variants={menuItemVariants}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  className="w-full pt-4"
+                >
+                  <div className="flex items-center">
+                    <LanguageSwitcher />
+                  </div>
+                </motion.li>
               </ul>
+
               <motion.div
                 className="mt-auto pt-10 flex flex-col space-y-4"
                 initial={{ opacity: 0, y: 20 }}
@@ -211,7 +234,7 @@ const Navbar = () => {
                 transition={{ delay: 0.5, duration: 0.5 }}
               >
                 <div className="text-white/70 text-sm">
-                  <p>Desenvolvedor Full Stack</p>
+                  <p>{t('footer.tagline')}</p>
                   <p>© {new Date().getFullYear()}</p>
                 </div>
                 <div className="flex space-x-5">

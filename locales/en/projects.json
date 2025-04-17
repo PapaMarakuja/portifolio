@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "title": "My Projects",
+    "description": "Explore my recent work and see how I transform ideas into reality with code and creativity."
+  },
+  "categories": {
+    "all": "All"
+  },
+  "items": {
+    "unotes": {
+      "title": "uNotes",
+      "description": "Intuitive and modern web note-taking application developed as a final graduation project. It offers organization, categorization, and note-sharing functionalities, with a responsive and user-friendly interface built using React, TypeScript, and modern styling with Tailwind CSS and DaisyUI."
+    },
+    "miasotel": {
+      "title": "Mia Sotel - Portfolio",
+      "description": "Elegant and interactive professional portfolio developed for showcasing creative work. Built with React and Tailwind CSS, it presents a fluid user experience with smooth animations, responsive design, and organized sections to highlight projects and skills."
+    },
+    "booreal": {
+      "title": "Booreal - Presentation Site",
+      "description": "Modern and dynamic corporate landing page developed for Booreal. Implemented with React, Tailwind CSS, and Framer Motion, it offers an immersive experience with fluid animations, responsive design, and interactive sections that present the company's services and values in an engaging way."
+    },
+    "frogssports": {
+      "title": "Frogs Sports",
+      "description": "Coming soon."
+    },
+    "moradaportas": {
+      "title": "Morada Portas",
+      "description": "Elegant and professional presentation website developed for Morada Portas, highlighting their premium line of products and services. Built with React, Tailwind CSS, and Framer Motion, it features a sophisticated design with a product catalog to highlight the brand's quality and expertise in the market."
+    }
+  },
+  "cta": {
+    "title": "Have a project in mind?",
+    "description": "I'm always open to discussing new projects and creative ideas. Let's create something amazing together.",
+    "button": "Get in Touch"
+  },
+  "comingSoon": "Coming soon",
+  "new": "New!"
+}

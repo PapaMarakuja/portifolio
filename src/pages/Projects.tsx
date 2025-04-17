@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 interface Project {
   id: number;
@@ -13,14 +14,15 @@ interface Project {
 }
 
 const Projects = () => {
-  const categories = ['Todos', 'React', 'Angular', 'Laravel'];
-  const [activeCategory, setActiveCategory] = useState('Todos');
+  const { t } = useTranslation(['projects', 'common']);
+  const categories = [t('projects:categories.all'), 'React', 'Angular', 'Laravel'];
+  const [activeCategory, setActiveCategory] = useState(t('projects:categories.all'));
 
   const projects: Project[] = [
     {
       id: 1,
-      title: "uNotes",
-      description: "Aplicativo web de anotações intuitivo e moderno desenvolvido como projeto final de graduação. Oferece funcionalidades de organização, categorização e compartilhamento de notas, com interface responsiva e amigável construída usando React, TypeScript e estilização moderna com Tailwind CSS e DaisyUI.",
+      title: t('projects:items.unotes.title'),
+      description: t('projects:items.unotes.description'),
       image: "/images/uNotes-print.png",
       tags: ["React", "TypeScript"],
       link: "",
@@ -29,8 +31,8 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Mia Sotel - Portifolio",
-      description: "Portfolio profissional elegante e interativo desenvolvido para showcase de trabalhos criativos. Construído com React e Tailwind CSS, apresenta uma experiência de usuário fluida com animações suaves, design responsivo e seções organizadas para destacar projetos e habilidades.",
+      title: t('projects:items.miasotel.title'),
+      description: t('projects:items.miasotel.description'),
       image: "/images/miasotel-print.png",
       tags: ["React", "TypeScript"],
       link: "https://miasotel.com/",
@@ -39,8 +41,8 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Booreal - Site de apresentação",
-      description: "Landing page corporativa moderna e dinâmica desenvolvida para a Booreal. Implementada com React, Tailwind CSS e Framer Motion, oferece uma experiência imersiva com animações fluidas, design responsivo e seções interativas que apresentam os serviços e valores da empresa de forma envolvente.",
+      title: t('projects:items.booreal.title'),
+      description: t('projects:items.booreal.description'),
       image: "/images/booreal-print.png",
       tags: ["React", "TypeScript"],
       link: "https://booreal-lab.web.app/",
@@ -49,8 +51,8 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "Frogs Sports",
-      description: "Novidades em breve.",
+      title: t('projects:items.frogssports.title'),
+      description: t('projects:items.frogssports.description'),
       image: "",
       tags: ["React", "TypeScript", "Laravel"],
       link: "",
@@ -59,8 +61,8 @@ const Projects = () => {
     },
     {
       id: 5,
-      title: "Morada Portas",
-      description: "Site de apresentação elegante e profissional desenvolvido para a Morada Portas, destacando sua linha premium de produtos e serviços. Construído com React, Tailwind CSS e Framer Motion, apresenta um design sofisticado com catálogo de produtos para ressaltar a qualidade e expertise da marca no mercado.",
+      title: t('projects:items.moradaportas.title'),
+      description: t('projects:items.moradaportas.description'),
       image: "",
       tags: ["React", "TypeScript"],
       link: "",
@@ -69,7 +71,7 @@ const Projects = () => {
     },
   ];
 
-  const filteredProjects = activeCategory === 'Todos'
+  const filteredProjects = activeCategory === t('projects:categories.all')
     ? projects
     : projects.filter(project => project.tags.includes(activeCategory));
 
@@ -83,9 +85,9 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Meus Projetos</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">{t('projects:hero.title')}</h1>
           <p className="text-gray-400 max-w-3xl mx-auto text-lg">
-            Explore meus trabalhos recentes e veja como transformo ideias em realidade com código e criatividade.
+            {t('projects:hero.description')}
           </p>
         </motion.div>
 
@@ -130,9 +132,9 @@ const Projects = () => {
           viewport={{ once: true }}
           className="mt-20 text-center bg-dark-lighter p-10 rounded-lg border border-dark-light"
         >
-          <h2 className="text-2xl font-bold mb-4">Tem um projeto em mente?</h2>
+          <h2 className="text-2xl font-bold mb-4">{t('projects:cta.title')}</h2>
           <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-            Estou sempre aberto a discutir novos projetos e ideias criativas. Vamos criar algo incrível juntos.
+            {t('projects:cta.description')}
           </p>
           <motion.a
             href="/contact"
@@ -140,7 +142,7 @@ const Projects = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            Entre em Contato
+            {t('projects:cta.button')}
           </motion.a>
         </motion.div>
       </div>
@@ -149,6 +151,8 @@ const Projects = () => {
 };
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+  const { t } = useTranslation(['projects']);
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -178,14 +182,14 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
             }}
           >
             <span className="text-8xl font-bold text-primary/30">?</span>
-            <span className="absolute text-sm text-white/60 mt-16">Em breve</span>
+            <span className="absolute text-sm text-white/60 mt-16">{t('projects:comingSoon')}</span>
           </motion.div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60"></div>
 
         {project.featured && (
           <div className="absolute top-3 right-3 bg-primary text-dark text-xs px-2 py-1 rounded-md font-medium">
-            Novo!
+            {t('projects:new')}
           </div>
         )}
 

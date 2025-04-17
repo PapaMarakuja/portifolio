@@ -1,8 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Home = () => {
+  const { t } = useTranslation(['home', 'common']);
   const controls = useAnimation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
@@ -35,7 +37,7 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Olá, eu sou <span className="gradient-text">Rafael Pereira</span>
+              {t('home:hero.greeting')} <span className="gradient-text">{t('home:hero.name')}</span>
             </motion.h1>
 
             <motion.h2
@@ -44,7 +46,7 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              Desenvolvedor Fullstack apaixonado por soluções criativas
+              {t('home:hero.title')}
             </motion.h2>
 
             <motion.div
@@ -62,7 +64,7 @@ const Home = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Sobre mim
+                  {t('common:buttons.aboutMe')}
                 </motion.button>
               </Link>
 
@@ -75,7 +77,7 @@ const Home = () => {
                   }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  Entre em contato
+                  {t('common:buttons.contactMe')}
                 </motion.button>
               </Link>
             </motion.div>
@@ -112,10 +114,9 @@ const Home = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Minhas Habilidades</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home:skills.title')}</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Com 5 anos de experiência, desenvolvi expertise em várias tecnologias
-              focando na criação de aplicações web responsivas e interativas.
+              {t('home:skills.description')}
             </p>
           </motion.div>
 
@@ -137,15 +138,15 @@ const Home = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Projetos em Destaque</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t('home:projects.title')}</h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
-              Aqui estão alguns dos meus projetos recentes que demonstram minhas habilidades e expertise.
+              {t('home:projects.description')}
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredProjects.map((project, index) => (
-              <ProjectCard key={project.title} project={project} index={index} />
+              <ProjectCard key={project.titleKey} project={project} index={index} />
             ))}
           </div>
 
@@ -153,10 +154,13 @@ const Home = () => {
             <Link to="/projects">
               <motion.button
                 className="px-6 py-3 bg-dark-light text-white font-medium rounded-md hover:bg-dark-lighter border border-primary transition-colors"
-                whileHover={{ scale: 1.05 }}
+                whileHover={{
+                  scale: 1.05,
+                  transition: { duration: 0.2 }
+                }}
                 whileTap={{ scale: 0.95 }}
               >
-                Ver Todos os Projetos
+                {t('home:projects.viewAll')}
               </motion.button>
             </Link>
           </div>
@@ -198,14 +202,16 @@ const SkillCard = ({ skill, index }: { skill: { name: string; icon: string; leve
 
 const ProjectCard = ({ project, index }: {
   project: {
-    title: string;
-    description: string;
+    titleKey: string;
+    descriptionKey: string;
     image: string;
     tags: string[];
     link: string
   };
   index: number
 }) => {
+  const { t } = useTranslation('home');
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -221,7 +227,7 @@ const ProjectCard = ({ project, index }: {
       <div className="relative overflow-hidden h-48">
         <motion.img
           src={project.image}
-          alt={project.title}
+          alt={t(project.titleKey)}
           className="w-full h-full object-cover"
           whileHover={{
             scale: 1.1,
@@ -234,8 +240,8 @@ const ProjectCard = ({ project, index }: {
       </div>
 
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-        <p className="text-gray-400 mb-4">{project.description}</p>
+        <h3 className="text-xl font-bold mb-2">{t(project.titleKey)}</h3>
+        <p className="text-gray-400 mb-4">{t(project.descriptionKey)}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {project.tags.map(tag => (
@@ -252,7 +258,7 @@ const ProjectCard = ({ project, index }: {
             rel="noopener noreferrer"
             className="text-primary hover:text-primary-light flex items-center"
           >
-            Visualizar Projeto <i className="fas fa-arrow-right ml-2"></i>
+            {t('common:buttons.viewProject')} <i className="fas fa-arrow-right ml-2"></i>
           </a>
         )}
       </div>
@@ -277,22 +283,22 @@ const skills = [
 
 const featuredProjects = [
   {
-    title: "uNotes",
-    description: "Projeto de anotações desenvolvido com React, TypeScript, Tailwind CSS e DaisyUI. Desenvolvido durante a faculdade como projeto final.",
+    titleKey: "featuredProjects.uNotes.title",
+    descriptionKey: "featuredProjects.uNotes.description",
     image: "/images/uNotes-print.png",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     link: ""
   },
   {
-    title: "Mia Sotel - Portifolio",
-    description: "Portifólio desenvolvido com React e Tailwind CSS para apresentação pessoal.",
+    titleKey: "featuredProjects.miaSotel.title",
+    descriptionKey: "featuredProjects.miaSotel.description",
     image: "/images/miasotel-print.png",
     tags: ["React.js", "TypeScript", "Tailwind CSS"],
     link: "https://miasotel.com/"
   },
   {
-    title: "Booreal - Site de apresentação",
-    description: "Site desenvolvido com React, Tailwind CSS e Framer Motion para apresentação de uma empresa.",
+    titleKey: "featuredProjects.booreal.title",
+    descriptionKey: "featuredProjects.booreal.description",
     image: "/images/booreal-print.png",
     tags: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     link: "https://booreal-lab.web.app/"
